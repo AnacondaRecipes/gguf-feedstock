@@ -28,7 +28,8 @@ requirements:
     - python
     - numpy >=1.17
     - tqdm >=4.27
-    - sentencepiece >=0.2.0
+    - sentencepiece >=0.2.0 # This dependency is missing in the upstream pyproject.toml file: https://github.com/ggerganov/llama.cpp/blob/master/gguf-py/pyproject.toml
+                            # PR: https://github.com/ggerganov/llama.cpp/pull/9107
 
 test:
   imports:
