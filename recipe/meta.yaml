@@ -1,13 +1,14 @@
 {% set name = "gguf" %}
-{% set version = "0.9.1" %}
+{% set version = "0.0.3609" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gguf-{{ version }}.tar.gz
-  sha256: f5e70987e15b19c545f6a9f7533b4033fb306330eb1f3c5c95fd28b14c3fd33b
+  url: https://github.com/ggerganov/llama.cpp/archive/b{{ version.split(".")[-1] }}.tar.gz
+  sha256: 9545e6cf7052927208538c19ffc97b939876714e4b756542a2c45afb8fd7e581
 
 build:
   entry_points:
@@ -16,7 +17,7 @@ build:
     - gguf-set-metadata = scripts:gguf_set_metadata_entrypoint
     - gguf-new-metadata = scripts:gguf_new_metadata_entrypoint
   skip: True # [py<38]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: cd gguf-py && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -28,6 +29,7 @@ requirements:
     - python
     - numpy >=1.17
     - tqdm >=4.27
+    - pyyaml >=5.1
     - sentencepiece >=0.2.0 # This dependency is missing in the upstream pyproject.toml file: https://github.com/ggerganov/llama.cpp/blob/master/gguf-py/pyproject.toml
                             # PR: https://github.com/ggerganov/llama.cpp/pull/9107
 
