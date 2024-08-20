@@ -41,7 +41,6 @@ test:
     - gguf-new-metadata --help
   requires:
     - pip
-  
 about:
   home: https://ggml.ai
   summary: Read and write ML models in GGUF for GGML
