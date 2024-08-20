@@ -15,7 +15,7 @@ build:
     - gguf-dump = scripts:gguf_dump_entrypoint
     - gguf-set-metadata = scripts:gguf_set_metadata_entrypoint
     - gguf-new-metadata = scripts:gguf_new_metadata_entrypoint
-  noarch: python
+  skip: True # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
