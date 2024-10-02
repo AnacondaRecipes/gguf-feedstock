@@ -48,7 +48,7 @@ about:
   home: https://ggml.ai
   summary: Read and write ML models in GGUF for GGML
   description: |
-    Read and write ML models in GGUF for GGML
+    Read and write ML models in GGUF for GGML.
   license: MIT
   license_family: MIT
   license_file: LICENSE
