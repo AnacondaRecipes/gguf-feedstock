@@ -1,6 +1,13 @@
-channels:
-  - ai-staging
+aggregate_check: false
 
-# destination upon merge
+upload_without_merge: true
+
+content_signing: {'win-64': False}
+#mark_private: True
+
 upload_channels:
-  - ai-staging
+  - services
+
+channels:
+  - services
+ # - services-build-deps
