@@ -56,6 +56,11 @@ about:
   doc_url: https://github.com/ggerganov/llama.cpp/tree/master/gguf-py
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49522
+    reason: Dependency for vllm
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - sodre
     - jnoller
