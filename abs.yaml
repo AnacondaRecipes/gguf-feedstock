@@ -1,6 +1,5 @@
-channels:
-  - ai-staging
 
-# destination upon merge
-upload_channels:
-  - ai-staging
+aggregate_check: false
+
+channels:
+  - services
